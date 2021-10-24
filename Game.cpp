@@ -1,5 +1,4 @@
 #include <vector>
-#include <deque>
 #include <array>
 #include <time.h>
 #include <string>
@@ -7,7 +6,6 @@
 #include <ncurses.h>
 #include <chrono>
 #include <thread>
-#include <atomic>
 #include <mutex>
 
 class Game{
@@ -326,13 +324,11 @@ public:
         if(!updateTime(u_draw)) return;
         
         //drawing the space
-        bool colored;
         for(int i = 0; i < HEIGHT-1; i++){
             for(int j = 0; j < WIDTH-1; j++){
-                colored = rand() % 3 == 1;
-                attron(COLOR_PAIR(/*colored ? 1 : */3));
+                attron(COLOR_PAIR(3));
                 mvaddch(i,j, space[i][j]);
-                attroff(COLOR_PAIR(/*colored ? 1 : */3));
+                attroff(COLOR_PAIR(3));
             }
         }
         
@@ -356,7 +352,7 @@ public:
             mvaddch(b.first,b.second,'*');
             attroff(COLOR_PAIR(2));
         }
-
+        
         //drawing the enemies
         for(auto& e : enemies)
             for(int i = 0; i < enemy.size(); i++){
