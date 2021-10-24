@@ -136,9 +136,9 @@ public:
         }
 
         int i = 0;
-         while(1){
+        while(1){
             if(i >= enemies.size()) break;
-            
+
             if(!updateTime(u_enemies[i])) {
                 i++;
                 continue;
@@ -249,7 +249,7 @@ public:
  
     bool HandleCollision(int x, int y, CollisionType type, int index = 0){
         switch(type){
-            case CollisionType::Enemy:  //small bug fix please with the collision enemy bumping into player!!
+            case CollisionType::Enemy:
                 for(int i = 0; i < player.size(); i++)
                     for(int j = 0; j < player[0].size(); j++)
                         if(player[i][j] != ' ' && x == playerposX + i && y == playerposY + j){
@@ -279,6 +279,7 @@ public:
                             return true;
                         }
                     }
+                
                 break;
             case CollisionType::PlayerBullet:
                 for(int e = 0; e < enemies.size(); e++)
