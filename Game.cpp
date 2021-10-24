@@ -85,7 +85,7 @@ public:
         } while(!isGameOver());
         
         
-        std::string str= "Your Health: "; //+ std::to_string(playerHealth);
+        std::string str= "Your Health: ";
         mvaddstr(HEIGHT+1, WIDTH / 2 - (str.size()+1) / 2, str.c_str());
 
         attron(COLOR_PAIR(playerHealth == 0 ? 2 : 1));
