@@ -1,7 +1,7 @@
 # SpaceShooter
 
 To run the game on MacOS or Linux, navigate to the location where you saved the files, then type ./a.out in the terminal.
-The Ncurses library is only available for MacOS and Linus, so you can't run the game on Windows.
+The Ncurses library is only available for MacOS and Linux, so you can't run the game on Windows.
 
 ## Notes
 
