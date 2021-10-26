@@ -236,6 +236,7 @@ public:
             }
         }
     }
+    
     bool isGameOver(){
         return playerHealth == 0 || gameOver;
     }
